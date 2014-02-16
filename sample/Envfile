@@ -1,0 +1,14 @@
+# vim: set ft=ruby:
+
+path '/usr/local/share/media/rbenv'
+
+plugin 'sstephenson/ruby-build'
+plugin 'sstephenson/rbenv-gem-rehash'
+plugin 'sstephenson/rbenv-default-gems'
+
+plugin 'rkh/rbenv-use'
+plugin 'rkh/rbenv-update'
+plugin 'tpope/rbenv-ctags'
+
+plugin 'chriseppstein/rbenv-each'
+

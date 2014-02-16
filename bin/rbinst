@@ -1,0 +1,25 @@
+#! /usr/bin/env ruby
+
+require 'rbinst'
+require 'ostruct'
+require 'optparse'
+
+@opts = OpenStruct.new({
+  :envfile => './Envfile',
+})
+
+OptionParser.new do |opts|
+  opts.banner =<<-EOF
+Usage: #{File.basename($0)} [options]
+  EOF
+
+  opts.on('-e', '--env ENVFILE',
+          'The path to the Envfile to use (default: ./Envfile)') do |envfile|
+    @opts.envfile = File.expand_path(envfile)
+  end
+end.parse!
+
+@env = RbInst::Env.new(@opts.envfile)
+@env.install_rbenv
+@env.install_plugins
+
